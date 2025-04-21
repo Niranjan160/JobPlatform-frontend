@@ -1,0 +1,97 @@
+.welcome-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  background: #f4f7fc;
+  min-height: 100vh;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #304ffe;
+}
+
+.login-button {
+  background-color: #304ffe;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #1a35c9;
+}
+
+.welcome-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-section {
+  max-width: 500px;
+  padding: 20px;
+}
+
+.text-section h2 {
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.text-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.image-section img {
+  max-width: 450px;
+  width: 100%;
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  .welcome-content {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .text-section {
+    text-align: center;
+  }
+
+  .image-section {
+    text-align: center;
+  }
+}
+
+.text-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.text-section ul li {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #333;
+}
+

@@ -1,0 +1,36 @@
+.jobs-container {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.jobs-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.job-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.job-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.job-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.loading {
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
