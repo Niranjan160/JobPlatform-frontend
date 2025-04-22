@@ -9,6 +9,19 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-bar h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #333;
+}
+
 /* === Form Section === */
 .job-form {
   display: flex;
@@ -59,7 +72,7 @@
 
 /* === My Jobs Section === */
 .myjobs-section {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .myjobs-section h3 {
@@ -93,11 +106,82 @@
 }
 
 .myjob-card p {
-  margin: 0;
+  margin: 6px 0;
   color: #555;
   font-size: 0.95rem;
 }
 
+.job-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.left-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.right-actions {
+  margin-left: auto;
+}
+
+/* === Button Styling === */
+.edit-btn,
+.delete-btn,
+.check-btn,
+.open-modal-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0069d9;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.check-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.check-btn:hover {
+  background-color: #218838;
+}
+
+.open-modal-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+}
+
+.open-modal-btn:hover {
+  background-color: #0069d9;
+}
 
 /* === Modal Overlay === */
 .modal-overlay {
@@ -164,46 +248,46 @@
   color: #000;
 }
 
-/* === Reuse job-form styles === */
-.job-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.job-form input,
-.job-form textarea,
-.job-form select {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 15px;
-  background-color: #fdfdfd;
-  transition: border-color 0.3s ease;
-}
-.job-form input:focus,
-.job-form textarea:focus,
-.job-form select:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-.job-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.job-form button {
-  background-color: #007bff;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-.job-form button:hover {
-  background-color: #0056b3;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .postjob-container {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+  
+  .job-actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .left-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .right-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .edit-btn,
+  .delete-btn,
+  .check-btn {
+    width: 100%;
+  }
+  
+  .header-bar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .header-bar h2 {
+    text-align: center;
+  }
+  
+  .open-modal-btn {
+    width: 100%;
+  }
 }

@@ -11,7 +11,7 @@ const Home = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [filter, setFilter] = useState('');
-  const userId = parseInt(localStorage.getItem('userId'));
+  // const userId = parseInt(localStorage.getItem('userId'));
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const Home = () => {
           <option value="One-Time">One-Time</option>
           <option value="Full-Time">Full-Time</option>
           <option value="Part-Time">Part-Time</option>
-          <option value="Remote">Remote</option>
+          <option value="Work_From_Home">Work_From_Home</option>
         </select>
       </div>
 
@@ -103,7 +103,7 @@ const Home = () => {
             {/* <button onClick={(e) => { e.stopPropagation(); handleApply(job.jobId, job.userId); }}>
               Apply Now
             </button> */}
-             <button onClick={(e) => {
+             <button className="messages-button" onClick={(e) => {
               e.stopPropagation();
               setSelectedJob(job)
               // handleApply(job);

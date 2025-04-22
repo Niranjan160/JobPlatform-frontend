@@ -10,6 +10,7 @@ import BottomNav from './components/BottomNav';
 import Welcome from './pages/Welcome';
 import Messages from './pages/Messages';
 import ChatPage from './pages/ChatPage';
+import CheckApplicants from './pages/CheckApplicants';
 
 // Wrapper to access location inside Router
 const AppRoutes = ({ isAuthenticated, setIsAuthenticated }) => {
@@ -31,7 +32,7 @@ const AppRoutes = ({ isAuthenticated, setIsAuthenticated }) => {
         <Route path="/postjob" element={isAuthenticated ? <PostJob /> : <Navigate to="/login" replace />} />
         <Route path="/messages" element={isAuthenticated ? <Messages /> : <Navigate to="/login" replace />} />
         <Route path="/chat/:userId" element={isAuthenticated ? <ChatPage /> : <Navigate to="/login" replace />} />
-
+        <Route path="/job/:jobId/details" element={<CheckApplicants />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

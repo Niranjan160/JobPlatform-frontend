@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import './PostJob.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const PostJob = () => {
-
+  const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
   const [jobData, setJobData] = useState({
     title: '',
@@ -77,6 +78,11 @@ const PostJob = () => {
       fetchMyJobs();
     }
   };
+  
+  const handleCheck = (jobId) => {
+    navigate(`/job/${jobId}/details`);
+  };
+
 
   useEffect(() => {
     if (userId) fetchMyJobs();
@@ -86,7 +92,7 @@ const PostJob = () => {
     <div className="postjob-container">
       <div className="header-bar">
         <h2>Your Posted Jobs</h2>
-        <button className="open-modal-btn" onClick={() => setShowModal(true)}>Post Job</button>
+        <button className="open-modal-btn" onClick={() => setShowModal(true)}>Post New Job</button>
       </div>
 
       {showModal && (
@@ -103,20 +109,21 @@ const PostJob = () => {
                 <option value="Plumber">Plumber</option>
                 <option value="Electrician">Electrician</option>
                 <option value="AC-service">AC-Service</option>
-                <option value="Parlor">Parlor</option>
+                <option value="Parlor">Parlour</option>
                 <option value="Gardening">Gardening</option>
                 <option value="Software-Developer">Software-Developer</option>
-                <option value="Software-Developer">Software-Developer</option>
-                <option value="Software-Developer">Software-Developer</option>
+                <option value="Web-Developer">Web-Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
               </select>
               <select name="jobType" value={jobData.jobType} onChange={handleChange}>
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
-                <option value="Internship">Internship</option>
-                <option value="Remote">Remote</option>
+               {/* <option value="Internship">Internship</option> */}
+               {/* <option value="Short-period">Short-Period</option> */}
+               <option value="Work_From_Home">Work_From_Home</option>
                 <option value="One-Time">One-Time</option>
               </select>
-              <button type="submit">{editingId ? "Update Job" : "Post Job"}</button>
+              <button className="job-form button" type="submit">{editingId ? "Update Job" : "Post Job"}</button>
             </form>
           </div>
         </div>
@@ -135,8 +142,13 @@ const PostJob = () => {
                 <p><strong>Salary:</strong> ₹{job.salary}</p>
                 <p><strong>Type:</strong> {job.jobType}</p>
                 <div className="job-actions">
-                  <button className="edit-btn" onClick={() => handleEdit(job)}>Edit</button>
-                  <button className="delete-btn" onClick={() => handleDelete(job.jobId)}>Delete</button>
+                  <div className="left-actions">
+                    <button className="edit-btn" onClick={() => handleEdit(job)}>Edit</button>
+                    <button className="delete-btn" onClick={() => handleDelete(job.jobId)}>Delete</button>
+                  </div>
+                  <div className="right-actions">
+                    <button className="check-btn" onClick={() => handleCheck(job.jobId)}>Check</button>
+                  </div>
                 </div>
               </li>
             ))}
